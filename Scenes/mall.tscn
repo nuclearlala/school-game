@@ -1,0 +1,263 @@
+[gd_scene load_steps=27 format=4 uid="uid://bdi7m6drsts2o"]
+
+[ext_resource type="Texture2D" uid="uid://bujv4p22cu83g" path="res://imports/Sprites/Backgrounds/MAP_2.png" id="1_lodaq"]
+[ext_resource type="PackedScene" uid="uid://bivikni6fft8s" path="res://Scenes/player.tscn" id="1_qtisu"]
+[ext_resource type="PackedScene" uid="uid://bytx20hi8mjeo" path="res://Scenes/score.tscn" id="2_l14xk"]
+[ext_resource type="Texture2D" uid="uid://bk68ri5xjmhx2" path="res://imports/Sprites/Backgrounds/map 2 buildings.png" id="2_n10co"]
+[ext_resource type="Texture2D" uid="uid://dkjr2weedmsj0" path="res://imports/Sprites/Backgrounds/building sprite sheet.png" id="3_qtisu"]
+[ext_resource type="Texture2D" uid="uid://bd8rembdg74my" path="res://imports/Sprites/Objects/car 1.png" id="4_tqeo8"]
+[ext_resource type="Texture2D" uid="uid://bi0fi85l6k1i5" path="res://imports/Sprites/Objects/car 2.png" id="5_d6ryo"]
+[ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="6_vmwst"]
+[ext_resource type="PackedScene" uid="uid://x8cvchlq1hh2" path="res://Scenes/door.tscn" id="7_n10co"]
+[ext_resource type="PackedScene" uid="uid://bp2xwb85tq6vy" path="res://quit ui.tscn" id="9_ruoki"]
+[ext_resource type="PackedScene" uid="uid://dntj0jay3deyt" path="res://enemy/enemy.tscn" id="9_tqeo8"]
+[ext_resource type="PackedScene" uid="uid://clo3iyc887yw5" path="res://Scenes/DialogArea.tscn" id="10_d6ryo"]
+[ext_resource type="PackedScene" uid="uid://ddv8ndhq5jmsq" path="res://Interactions/vhs.tscn" id="11_vmwst"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l14xk"]
+texture = ExtResource("2_n10co")
+0:0/size_in_atlas = Vector2i(187, 61)
+0:0/0 = 0
+0:0/0/y_sort_origin = 300
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1451.21, 335.472, 1166.11, 348.333, 1470.5, 61.0923, 1474.79, 178.99, 1153.25, 468.374, -786.697, 464.087, -782.41, 444.795, -1026.78, 446.938, -1082.51, 474.805, -1451.21, 464.087)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ruoki"]
+texture = ExtResource("3_qtisu")
+0:71/size_in_atlas = Vector2i(45, 28)
+0:71/0 = 0
+0:101/size_in_atlas = Vector2i(45, 28)
+0:101/0 = 0
+0:101/0/physics_layer_0/polygon_0/points = PackedVector2Array(-331, 145, 238, 144, 345, 29, 339, 98, 237, 184, -332, 183)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sfur"]
+texture = ExtResource("4_tqeo8")
+0:0/size_in_atlas = Vector2i(28, 27)
+0:0/0 = 0
+0:0/0/y_sort_origin = 60
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-163, 93, -172, 131, -169, 150, -21, 152, 9, 134, 28, 144, 57, 124, 53.1165, 97.3281, 108, 54, 129, 56, 155, 39, 153, 19, 171, 2, 170, -39, 27, -35)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt6gp"]
+texture = ExtResource("5_d6ryo")
+0:0/size_in_atlas = Vector2i(28, 27)
+0:0/0 = 0
+0:0/0/y_sort_origin = 60
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-163, 93, -172, 131, -169, 150, -21, 152, 169, 1, 167, -36, 27, -35)
+
+[sub_resource type="TileSet" id="TileSet_ftnsm"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_l14xk")
+sources/5 = SubResource("TileSetAtlasSource_ruoki")
+sources/6 = SubResource("TileSetAtlasSource_8sfur")
+sources/7 = SubResource("TileSetAtlasSource_gt6gp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnpsh"]
+size = Vector2(20, 10.8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfl6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcbdp"]
+size = Vector2(20, 25.225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u8on"]
+size = Vector2(0.5, 357.35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmwst"]
+size = Vector2(293, 209)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l14xk"]
+size = Vector2(391.875, 315)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruoki"]
+size = Vector2(348, 239.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sfur"]
+size = Vector2(624, 96)
+
+[node name="mall" type="Node2D"]
+z_index = -1
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(292, 886)
+limit_left = 15
+limit_top = -470
+limit_right = 5099
+limit_bottom = 2169
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="Player" parent="." instance=ExtResource("1_qtisu")]
+position = Vector2(292, 886)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+remote_path = NodePath("../../Camera2D")
+
+[node name="Map2" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(2558, 737)
+texture = ExtResource("1_lodaq")
+metadata/_edit_lock_ = true
+
+[node name="buildings" type="TileMapLayer" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AADdABMAAgAAAAAAAADEAGsAAwAAAAAAAADFAGsABQAAAEcAAAAEAXMABQAAAGUAAACBAD8ABwAAAAAAAADWAHYABwAAAAAAAAAEATwABgAAAAAAAAA=")
+tile_set = SubResource("TileSet_ftnsm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2444, -725)
+scale = Vector2(1000, 10)
+shape = SubResource("RectangleShape2D_jnpsh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-95, -4.76837e-07)
+scale = Vector2(10, 300)
+shape = SubResource("RectangleShape2D_vfl6x")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(3374, 2255)
+scale = Vector2(500, 10)
+shape = SubResource("RectangleShape2D_jcbdp")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(3408, 2808)
+scale = Vector2(500, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(3.644, -194.775)
+shape = SubResource("RectangleShape2D_3u8on")
+
+[node name="DialogPlayer" parent="." instance=ExtResource("6_vmwst")]
+scene_text_file = "res://imports/json/world_dialog.json"
+
+[node name="Score" parent="DialogPlayer" instance=ExtResource("2_l14xk")]
+z_index = 9
+position = Vector2(24, 988)
+scale = Vector2(2, 2)
+
+[node name="quit ui" parent="DialogPlayer" instance=ExtResource("9_ruoki")]
+z_index = 4
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Quit" parent="DialogPlayer/quit ui" index="0"]
+layout_mode = 0
+offset_left = 1718.0
+offset_top = 54.0
+offset_right = 1816.0
+offset_bottom = 94.0
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_W" parent="Doors" instance=ExtResource("7_n10co")]
+position = Vector2(188, 844)
+destination_level_tag = "world"
+destination_door_tag = "E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_W" index="0"]
+position = Vector2(-36.3705, -3.45707e-05)
+
+[node name="Spawn" parent="Doors/Door_W" index="1"]
+position = Vector2(30.3801, 0.479002)
+
+[node name="Door_N" parent="Doors" instance=ExtResource("7_n10co")]
+destination_level_tag = "videostore"
+destination_door_tag = "EE"
+
+[node name="CollisionShape2D" parent="Doors/Door_N" index="0"]
+position = Vector2(1127.91, 335.801)
+
+[node name="Spawn" parent="Doors/Door_N" index="1"]
+position = Vector2(1133.05, 427.776)
+
+[node name="enemy3" parent="." instance=ExtResource("9_tqeo8")]
+position = Vector2(3269, 860)
+motion_mode = 1
+
+[node name="enemy2" parent="." instance=ExtResource("9_tqeo8")]
+position = Vector2(1687, 1452)
+motion_mode = 1
+
+[node name="enemy" parent="." instance=ExtResource("9_tqeo8")]
+position = Vector2(959, 870)
+motion_mode = 1
+
+[node name="VIDEO DialogArea" parent="." instance=ExtResource("10_d6ryo")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+text_key = "video"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VIDEO DialogArea"]
+position = Vector2(2270.5, 659)
+shape = SubResource("RectangleShape2D_vmwst")
+
+[node name="KVS DialogArea" parent="." instance=ExtResource("10_d6ryo")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+text_key = "kvs"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KVS DialogArea"]
+position = Vector2(3637, 681.5)
+shape = SubResource("RectangleShape2D_vmwst")
+
+[node name="REDCAR DialogArea" parent="." instance=ExtResource("10_d6ryo")]
+text_key = "redcar"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="REDCAR DialogArea"]
+z_index = 3
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(2067, 1036)
+shape = SubResource("RectangleShape2D_l14xk")
+
+[node name="WHITECAR DialogArea" parent="." instance=ExtResource("10_d6ryo")]
+text_key = "whitecar"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WHITECAR DialogArea"]
+z_index = 3
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(4176, 1040)
+scale = Vector2(1.18357, 0.912032)
+shape = SubResource("RectangleShape2D_ruoki")
+
+[node name="PIZZA DialogArea" parent="." instance=ExtResource("10_d6ryo")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+text_key = "pizza"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PIZZA DialogArea"]
+position = Vector2(4364, 730)
+shape = SubResource("RectangleShape2D_8sfur")
+
+[node name="VHS" parent="." instance=ExtResource("11_vmwst")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(1844, 1328)
+
+[node name="Interactable" parent="VHS" index="1"]
+scale = Vector2(0.998203, 1.01017)
+
+[editable path="DialogPlayer/quit ui"]
+[editable path="Doors/Door_W"]
+[editable path="Doors/Door_N"]
+[editable path="VHS"]

@@ -1,0 +1,155 @@
+[gd_scene load_steps=12 format=3 uid="uid://dntj0jay3deyt"]
+
+[ext_resource type="Script" uid="uid://b7s65x4hd41bx" path="res://enemy/enemy.gd" id="1_p200p"]
+[ext_resource type="SpriteFrames" uid="uid://dwad4u0sxl5g5" path="res://enemy/rat.tres" id="2_ofsxj"]
+[ext_resource type="Texture2D" uid="uid://smxuwhi6tji2" path="res://imports/Sprites/Objects/shadow.png" id="3_ppra6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p200p"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmsee"]
+bg_color = Color(0.881673, 0.0968261, 0.133817, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+anti_aliasing = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmsee"]
+size = Vector2(80.5, 51)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5p1p"]
+radius = 287.063
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p200p"]
+size = Vector2(153.5, 79)
+
+[sub_resource type="Animation" id="Animation_ppra6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ofsxj"]
+resource_name = "rat_explode"
+length = 1.115
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.233333, 0.3, 0.366667, 0.433333, 0.5, 0.566667, 0.633333, 0.7, 0.766667, 0.833333, 0.9, 0.966667, 1.03333, 1.06667, 1.115),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p200p"]
+_data = {
+&"RESET": SubResource("Animation_ppra6"),
+&"rat_explode": SubResource("Animation_ofsxj")
+}
+
+[node name="enemy" type="CharacterBody2D"]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("1_p200p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+z_index = 2
+offset_left = -51.0
+offset_top = 17.0
+offset_right = 17.0
+offset_bottom = 29.0
+scale = Vector2(1.31173, 1.31173)
+theme_override_styles/background = SubResource("StyleBoxFlat_p200p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pmsee")
+max_value = 30.0
+show_percentage = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -11)
+shape = SubResource("RectangleShape2D_pmsee")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = ExtResource("2_ofsxj")
+animation = &"rat_explode"
+offset = Vector2(0, -8)
+
+[node name="detection_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 29
+collision_mask = 29
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+visible = false
+shape = SubResource("CircleShape2D_k5p1p")
+metadata/_edit_lock_ = true
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+visible = false
+position = Vector2(-2, -15)
+shape = SubResource("RectangleShape2D_p200p")
+debug_color = Color(0.937255, 0.0941176, 0, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="take_damage_cooldown" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p200p")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.364706)
+light_mask = 63
+visibility_layer = 63
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(5, 11)
+scale = Vector2(2.09016, 1.44118)
+texture = ExtResource("3_ppra6")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]

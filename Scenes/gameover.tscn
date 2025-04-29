@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=3 uid="uid://yidcrkx2vltk"]
+
+[ext_resource type="FontFile" uid="uid://c0dcqq0jiloll" path="res://Font/EquipmentPro.ttf" id="1_a57xw"]
+[ext_resource type="Script" uid="uid://dsbrrfiejjsro" path="res://Scenes/gameover.gd" id="1_qjy16"]
+[ext_resource type="Texture2D" uid="uid://bewed0eed3e5n" path="res://imports/Sprites/Objects/button bottom white.png" id="2_qjy16"]
+[ext_resource type="Texture2D" uid="uid://bd2tin7wrbt3n" path="res://imports/Sprites/Objects/button bottom_hover.png" id="3_26hfm"]
+[ext_resource type="Texture2D" uid="uid://cgkaos8dfbh2l" path="res://imports/Sprites/Objects/button bottom.png" id="4_vskwr"]
+[ext_resource type="Texture2D" uid="uid://bouwjusvodvcn" path="res://imports/Sprites/Objects/button top white.png" id="5_opou1"]
+[ext_resource type="Texture2D" uid="uid://1yjjkmoxl8f1" path="res://imports/Sprites/Objects/button top_hover.png" id="6_wxkdt"]
+[ext_resource type="Texture2D" uid="uid://btjekoeukuhq8" path="res://imports/Sprites/Objects/button top.png" id="7_rdsaq"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_lamgj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ymoh"]
+texture = ExtResource("5_opou1")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dswcw"]
+texture = ExtResource("6_wxkdt")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kaio3"]
+texture = ExtResource("5_opou1")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fd00b"]
+texture = ExtResource("7_rdsaq")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06880"]
+texture = ExtResource("2_qjy16")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awesd"]
+texture = ExtResource("3_26hfm")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krx2d"]
+texture = ExtResource("4_vskwr")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xwpmx"]
+texture = ExtResource("4_vskwr")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="gameover" type="Control"]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qjy16")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 700.0
+offset_top = 414.5
+offset_right = 1220.0
+offset_bottom = 665.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_a57xw")
+theme_override_font_sizes/font_size = 124
+text = "GAME OVER 
+:("
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 683.0
+offset_right = 1016.0
+offset_bottom = 728.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_a57xw")
+theme_override_font_sizes/font_size = 32
+theme_override_icons/icon = SubResource("ImageTexture_lamgj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7ymoh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dswcw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kaio3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fd00b")
+text = "RETRY
+"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 753.0
+offset_right = 994.0
+offset_bottom = 785.0
+scale = Vector2(1.24, 1.24)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_a57xw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_06880")
+theme_override_styles/hover = SubResource("StyleBoxTexture_awesd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_krx2d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xwpmx")
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

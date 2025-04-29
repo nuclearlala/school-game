@@ -1,0 +1,133 @@
+[gd_scene load_steps=21 format=3 uid="uid://bo7x24hj525mp"]
+
+[ext_resource type="Script" uid="uid://dmwsf7g1xfm4r" path="res://Scenes/returns.gd" id="1_hfvn4"]
+[ext_resource type="Texture2D" uid="uid://sj8osb8bnxcb" path="res://imports/Sprites/Objects/returns.png" id="2_h5jd2"]
+[ext_resource type="PackedScene" uid="uid://bpxgbxofe2ui8" path="res://Interactions/interactable.tscn" id="3_on26q"]
+[ext_resource type="AudioStream" uid="uid://dupg385tpxmow" path="res://imports/music/Arcade-8-bit-death.wav" id="4_56hbu"]
+[ext_resource type="Texture2D" uid="uid://1lrrsax2xt2k" path="res://imports/Sprites/Objects/U_DIDIT.png" id="5_on26q"]
+[ext_resource type="Texture2D" uid="uid://drojvnrnamymd" path="res://imports/Sprites/Objects/needmoretapes.png" id="6_3igx2"]
+[ext_resource type="AudioStream" uid="uid://cug0e7j6key5" path="res://imports/music/success.wav" id="7_tdo76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_513cj"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(0, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdg6q"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(80, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3no5"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(160, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnv1q"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(240, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nltl"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(320, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m16ra"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(400, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptede"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(480, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehfqb"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(560, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p88mx"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(640, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6pvs"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(720, 0, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjl26"]
+atlas = ExtResource("2_h5jd2")
+region = Rect2(800, 0, 80, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mftkp"]
+animations = [{
+"frames": [{
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_513cj")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_rdg6q")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_j3no5")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_mnv1q")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_4nltl")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_m16ra")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_ptede")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_ehfqb")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_p88mx")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_m6pvs")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_fjl26")
+}],
+"loop": true,
+"name": &"return_Shine",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3igx2"]
+radius = 61.6604
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_hfvn4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mftkp")
+animation = &"return_Shine"
+frame_progress = 0.702916
+
+[node name="Interactable" parent="." instance=ExtResource("3_on26q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_3igx2")
+
+[node name="sfx_get" type="AudioStreamPlayer2D" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+stream = ExtResource("4_56hbu")
+volume_db = -10.294
+area_mask = 63
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="UDidit" type="Sprite2D" parent="."]
+position = Vector2(967, 433)
+texture = ExtResource("5_on26q")
+
+[node name="Needmoretapes" type="Sprite2D" parent="."]
+position = Vector2(921, 416)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_3igx2")
+
+[node name="finished" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_tdo76")
+volume_db = -3.614

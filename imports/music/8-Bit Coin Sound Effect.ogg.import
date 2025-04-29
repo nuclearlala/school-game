@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bx3tnmau3qd2d"
+path="res://.godot/imported/8-Bit Coin Sound Effect.ogg-a56389a4d54b979753292940679cdbb3.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/music/8-Bit Coin Sound Effect.ogg"
+dest_files=["res://.godot/imported/8-Bit Coin Sound Effect.ogg-a56389a4d54b979753292940679cdbb3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

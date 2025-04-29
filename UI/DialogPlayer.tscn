@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cum3uhbgu6q8j"]
+
+[ext_resource type="Texture2D" uid="uid://uqr1l6uyqy14" path="res://imports/Sprites/Objects/box.png" id="2_chyht"]
+[ext_resource type="Script" uid="uid://bx80r050je11i" path="res://UI/DialogPlayer.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://c0dcqq0jiloll" path="res://Font/EquipmentPro.ttf" id="3_nhl4u"]
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("3")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 27.0
+offset_top = 9.0
+offset_right = 327.0
+offset_bottom = 109.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_chyht")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextLabel" type="Label" parent="."]
+clip_contents = true
+layout_direction = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 47.0
+offset_top = 22.0
+offset_right = 614.0
+offset_bottom = 191.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("3_nhl4u")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

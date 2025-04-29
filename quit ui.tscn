@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp2xwb85tq6vy"]
+
+[ext_resource type="Script" uid="uid://c8mg4bcb45k82" path="res://quit_ui.gd" id="1_f3ria"]
+[ext_resource type="FontFile" uid="uid://c0dcqq0jiloll" path="res://Font/EquipmentPro.ttf" id="1_t51ai"]
+[ext_resource type="Texture2D" uid="uid://bewed0eed3e5n" path="res://imports/Sprites/Objects/button bottom white.png" id="2_f3ria"]
+[ext_resource type="Texture2D" uid="uid://bd2tin7wrbt3n" path="res://imports/Sprites/Objects/button bottom_hover.png" id="3_yreki"]
+[ext_resource type="Texture2D" uid="uid://cgkaos8dfbh2l" path="res://imports/Sprites/Objects/button bottom.png" id="4_206fp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1iqlv"]
+texture = ExtResource("2_f3ria")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtwug"]
+texture = ExtResource("3_yreki")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma5we"]
+texture = ExtResource("4_206fp")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28yul"]
+texture = ExtResource("4_206fp")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="quit ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f3ria")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1748.0
+offset_top = 46.0
+offset_right = 1846.0
+offset_bottom = 86.0
+scale = Vector2(1.24, 1.24)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_t51ai")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1iqlv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mtwug")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ma5we")
+theme_override_styles/normal = SubResource("StyleBoxTexture_28yul")
+text = "QUIT"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

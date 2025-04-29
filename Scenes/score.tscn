@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bytx20hi8mjeo"]
+
+[ext_resource type="Script" uid="uid://bwsd777i8sh6y" path="res://score.gd" id="1_0f7a8"]
+[ext_resource type="FontFile" uid="uid://c0dcqq0jiloll" path="res://Font/EquipmentPro.ttf" id="1_hnwbn"]
+[ext_resource type="Texture2D" uid="uid://bqibr6pydn1vf" path="res://imports/Sprites/Objects/VHS.png" id="1_qcrpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcrpo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="score" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 158.0
+offset_bottom = 36.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_hnwbn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcrpo")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_0f7a8")
+
+[node name="TextureRect" type="TextureRect" parent="score"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 34.0
+offset_bottom = 36.0
+texture = ExtResource("1_qcrpo")
+expand_mode = 4

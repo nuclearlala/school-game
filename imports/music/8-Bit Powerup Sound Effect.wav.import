@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3hnat2p2muup"
+path="res://.godot/imported/8-Bit Powerup Sound Effect.wav-d9fc662d2c746840cbae7f80574f6360.sample"
+
+[deps]
+
+source_file="res://imports/music/8-Bit Powerup Sound Effect.wav"
+dest_files=["res://.godot/imported/8-Bit Powerup Sound Effect.wav-d9fc662d2c746840cbae7f80574f6360.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

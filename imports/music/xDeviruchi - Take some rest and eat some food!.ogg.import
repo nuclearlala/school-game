@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ccfiet5hki5x7"
+path="res://.godot/imported/xDeviruchi - Take some rest and eat some food!.ogg-41be052dabc90a7d6cd415db90dc75b5.oggvorbisstr"
+
+[deps]
+
+source_file="res://imports/music/xDeviruchi - Take some rest and eat some food!.ogg"
+dest_files=["res://.godot/imported/xDeviruchi - Take some rest and eat some food!.ogg-41be052dabc90a7d6cd415db90dc75b5.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

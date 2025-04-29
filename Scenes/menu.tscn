@@ -1,0 +1,190 @@
+[gd_scene load_steps=23 format=3 uid="uid://c87c3166nglxj"]
+
+[ext_resource type="Script" uid="uid://3i8heevdlild" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="FontFile" uid="uid://c0dcqq0jiloll" path="res://Font/EquipmentPro.ttf" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://bouwjusvodvcn" path="res://imports/Sprites/Objects/button top white.png" id="3_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://btjekoeukuhq8" path="res://imports/Sprites/Objects/button top.png" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://cgkaos8dfbh2l" path="res://imports/Sprites/Objects/button bottom.png" id="4_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://1yjjkmoxl8f1" path="res://imports/Sprites/Objects/button top_hover.png" id="4_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://bewed0eed3e5n" path="res://imports/Sprites/Objects/button bottom white.png" id="5_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://bd2tin7wrbt3n" path="res://imports/Sprites/Objects/button bottom_hover.png" id="7_6swd7"]
+[ext_resource type="Texture2D" uid="uid://buran4j2p8a2g" path="res://imports/Sprites/Objects/logo.png" id="9_6swd7"]
+[ext_resource type="Texture2D" uid="uid://uqr1l6uyqy14" path="res://imports/Sprites/Objects/box.png" id="9_rfqti"]
+[ext_resource type="Texture2D" uid="uid://15jwy7r7syq" path="res://imports/Sprites/Objects/box2.png" id="11_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://cblawt2tchc5u" path="res://imports/Sprites/Objects/BG.png" id="12_23t3j"]
+[ext_resource type="Texture2D" uid="uid://jdac2xjjvemh" path="res://imports/Sprites/Objects/wordart.png" id="13_8ph6h"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_wbdvm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qvly"]
+texture = ExtResource("3_jsrd8")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwsa2"]
+texture = ExtResource("4_q3rjx")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbdvm"]
+texture = ExtResource("3_jsrd8")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3rjx"]
+texture = ExtResource("3_wwsa2")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8i7c"]
+texture = ExtResource("5_jsrd8")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_23t3j"]
+texture = ExtResource("7_6swd7")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfqti"]
+texture = ExtResource("4_jsrd8")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6swd7"]
+texture = ExtResource("4_jsrd8")
+expand_margin_left = 10.0
+expand_margin_top = 8.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = 271.5
+offset_right = 21.5
+offset_bottom = 372.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3351, 1.33749)
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_158mb")
+theme_override_font_sizes/font_size = 32
+theme_override_icons/icon = SubResource("ImageTexture_wbdvm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7qvly")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wwsa2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wbdvm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q3rjx")
+text = "START"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 322.0
+offset_right = 22.0
+offset_bottom = 362.0
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 908.0
+offset_top = 870.0
+offset_right = 987.0
+offset_bottom = 902.0
+scale = Vector2(1.24, 1.24)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_158mb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_g8i7c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_23t3j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rfqti")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6swd7")
+text = "QUIT"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(970, 360)
+scale = Vector2(2.68455, 2.68455)
+texture = ExtResource("9_rfqti")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(959, 397)
+texture = ExtResource("9_6swd7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(957, 864)
+scale = Vector2(4.69792, 4.69792)
+texture = ExtResource("11_g8i7c")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.325441, 0.325441, 0.325441, 1)
+z_index = -2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(972, 542)
+scale = Vector2(1.01759, 1.01759)
+texture = ExtResource("12_23t3j")
+
+[node name="Wordart" type="Sprite2D" parent="."]
+position = Vector2(1574, 1031)
+scale = Vector2(0.281609, 0.281609)
+texture = ExtResource("13_8ph6h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 755.0
+offset_right = 461.0
+offset_bottom = 962.0
+theme_override_fonts/font = ExtResource("2_158mb")
+theme_override_font_sizes/font_size = 32
+text = "'E' To Interact
+'Q' To Attack
+
+Interact with doors
+Collect tapes and take them
+to the Video Store!"
+horizontal_alignment = 1
+
+[node name="Box2" type="Sprite2D" parent="."]
+z_index = -2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(296.25, 858)
+scale = Vector2(8.32292, 6.79167)
+texture = ExtResource("11_g8i7c")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

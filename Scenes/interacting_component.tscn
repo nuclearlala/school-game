@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://psdcgxrarhub"]
+
+[ext_resource type="FontFile" uid="uid://c0dcqq0jiloll" path="res://Font/EquipmentPro.ttf" id="1_hkgi3"]
+[ext_resource type="Script" uid="uid://c5oc8sdovrf58" path="res://Scripts/interacting_component.gd" id="1_nsw6d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nsw6d"]
+radius = 45.2769
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_nsw6d")
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("CircleShape2D_nsw6d")
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 99
+offset_left = -80.0
+offset_top = -112.0
+offset_right = 80.0
+offset_bottom = -80.0
+theme_override_fonts/font = ExtResource("1_hkgi3")
+theme_override_font_sizes/font_size = 32
+text = "E To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
