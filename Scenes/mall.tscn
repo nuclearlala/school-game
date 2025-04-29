@@ -25,9 +25,10 @@ texture = ExtResource("2_n10co")
 texture = ExtResource("3_qtisu")
 0:71/size_in_atlas = Vector2i(45, 28)
 0:71/0 = 0
+0:71/0/physics_layer_0/polygon_0/points = PackedVector2Array(-327.739, 6.20045, 235.618, 13.2867, 336.597, -41.6317, 340.14, 75.2913, 242.704, 174.499, -331.282, 185.128)
 0:101/size_in_atlas = Vector2i(45, 28)
 0:101/0 = 0
-0:101/0/physics_layer_0/polygon_0/points = PackedVector2Array(-331, 145, 238, 144, 345, 29, 339, 98, 237, 184, -332, 183)
+0:101/0/physics_layer_0/polygon_0/points = PackedVector2Array(-327.739, 6.20045, 235.618, 13.2867, 336.597, -41.6317, 340.14, 75.2913, 242.704, 174.499, -331.282, 185.128)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sfur"]
 texture = ExtResource("4_tqeo8")
@@ -155,7 +156,6 @@ z_as_relative = false
 y_sort_enabled = true
 
 [node name="Quit" parent="DialogPlayer/quit ui" index="0"]
-layout_mode = 0
 offset_left = 1718.0
 offset_top = 54.0
 offset_right = 1816.0

@@ -38,10 +38,10 @@ texture_region_size = Vector2i(30, 30)
 0:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-418.98, 141.229, -25, 115, 170, 113, 449, 20, 450, 113, 448, 130, 435, 140, 436.338, 133.216, 384.971, 145.07, 381, 173, 326, 219, -410, 220)
 0:38/size_in_atlas = Vector2i(24, 15)
 0:38/0 = 0
-0:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(-337, 66, -31, 81, 239, 65, 335, 16, 330, 79, 243, 175, -337, 173)
+0:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(242.704, -0.885788, 336.597, -66.4335, 343.683, 62.8904, 240.932, 169.184, -334.825, 176.27, -325.967, 9.74358)
 0:54/size_in_atlas = Vector2i(24, 15)
 0:54/0 = 0
-0:54/0/physics_layer_0/polygon_0/points = PackedVector2Array(-337, 66, -31, 81, 239, 65, 335, 16, 330, 79, 243, 175, -337, 173)
+0:54/0/physics_layer_0/polygon_0/points = PackedVector2Array(242.704, -0.885788, 336.597, -66.4335, 343.683, 62.8904, 240.932, 169.184, -334.825, 176.27, -325.967, 9.74358)
 0:70/size_in_atlas = Vector2i(58, 23)
 0:70/0 = 0
 0:70/0/physics_layer_0/polygon_0/points = PackedVector2Array(-896.41, -150.583, -15, 15, 609.417, -3.54312, 852.121, -69.0909, 848.578, 17.7156, 843.263, 100.979, 703.31, 159.44, 682.051, 210.816, 646.62, 219.674, 428.718, 233.846, 412.774, 198.415, 396.83, 191.329, 393.287, 127.552, 251.562, 124.009, 255.105, 155.897, 219.674, 177.156, -912.354, 180.699)
@@ -161,7 +161,6 @@ z_as_relative = false
 y_sort_enabled = true
 
 [node name="Quit" parent="DialogPlayer/quit ui" index="0"]
-layout_mode = 0
 offset_left = 1718.0
 offset_top = 54.0
 offset_right = 1816.0
