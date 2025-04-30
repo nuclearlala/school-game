@@ -1,0 +1,61 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.37188, 0.617188, 0.260376, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {
+"Ali Test": {
+"mode": 0,
+"name": "Ali Test",
+"pitch_base": 1.0,
+"pitch_variance": 0.1,
+"skip_characters": 5.0,
+"sound_path": "res://Dialogic/Ali/Ali Audio Test.ogg",
+"volume_base": -20.0,
+"volume_variance": 0.0
+},
+"Mood 1": {
+"mode": 0,
+"name": "Mood 1",
+"pitch_base": 1.0,
+"pitch_variance": 0.0,
+"skip_characters": 0.0,
+"sound_path": "",
+"volume_base": 0.0,
+"volume_variance": 0.0
+}
+},
+"style": ""
+},
+&"default_portrait": "Ali Default",
+&"description": "Alien Gal",
+&"display_name": "Ali",
+&"mirror": false,
+&"nicknames": ["Ali"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Ali Default": {
+"export_overrides": {
+"image": "\"res://Dialogic/Ali/Ali_Default.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Mood 1"
+},
+"Ali Default Talk": {
+"export_overrides": {
+"image": "\"res://Dialogic/Ali/ali_default_talk.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Ali Test"
+}
+},
+&"scale": 1.0
+}

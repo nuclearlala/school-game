@@ -1,0 +1,50 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.90625, 0.506226, 0.506226, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {
+"Ellie Test": {
+"mode": 0,
+"name": "Ellie Test",
+"pitch_base": 1.0,
+"pitch_variance": -0.1,
+"skip_characters": 9.0,
+"sound_path": "res://Dialogic/Ellie/Ellie Audio Test.ogg",
+"volume_base": -20.0,
+"volume_variance": -0.5
+}
+},
+"style": ""
+},
+&"default_portrait": "Ellie Default",
+&"description": "Silly girl",
+&"display_name": "Ellie",
+&"mirror": false,
+&"nicknames": ["Ellie"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Ellie Default": {
+"export_overrides": {
+"image": "\"res://Dialogic/Ellie/Ellie_Default.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Ellie Default Talk": {
+"export_overrides": {
+"image": "\"res://Dialogic/Ellie/ellie_default_talk.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Ellie Test"
+}
+},
+&"scale": 1.0
+}

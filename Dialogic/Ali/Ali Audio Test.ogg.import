@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://baw5uaekgeat6"
+path="res://.godot/imported/Ali Audio Test.ogg-a4d417e817e7e4c10624e98367bccb7e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Dialogic/Ali/Ali Audio Test.ogg"
+dest_files=["res://.godot/imported/Ali Audio Test.ogg-a4d417e817e7e4c10624e98367bccb7e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://g1r2wbepa1au"]
+[gd_scene load_steps=39 format=4 uid="uid://g1r2wbepa1au"]
 
 [ext_resource type="Script" uid="uid://tbxx0oocmna" path="res://Scripts/level.gd" id="1_hgpy0"]
 [ext_resource type="PackedScene" uid="uid://bivikni6fft8s" path="res://Scenes/player.tscn" id="2_0fj1v"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://clo3iyc887yw5" path="res://Scenes/DialogArea.tscn" id="10_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://dntj0jay3deyt" path="res://enemy/enemy.tscn" id="10_7yui6"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="11_ikia7"]
+[ext_resource type="PackedScene" uid="uid://bqhxtqya6uv6n" path="res://NPC/npc_ellie.tscn" id="18_0pcbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo5ed"]
 texture = ExtResource("2_5a7ea")
@@ -204,6 +205,15 @@ position = Vector2(45.3562, 1.91611)
 
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-33.3755, 2.39513)
+
+[node name="NPC_Ellie" parent="." instance=ExtResource("18_0pcbe")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(979, 628)
+
+[node name="Sprite2D2" parent="NPC_Ellie" index="3"]
+z_index = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0fj1v")]
 position = Vector2(303, 104)
@@ -432,6 +442,7 @@ scale = Vector2(0.998203, 1.01017)
 [editable path="VHS2"]
 [editable path="VHS"]
 [editable path="Doors/Door_E"]
+[editable path="NPC_Ellie"]
 [editable path="ALI DialogArea"]
 [editable path="STORE DialogArea"]
 [editable path="BUSINESS DialogArea"]

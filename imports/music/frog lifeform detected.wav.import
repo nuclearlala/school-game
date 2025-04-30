@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tswu4kn5d2up"
+path="res://.godot/imported/frog lifeform detected.wav-0362102e315c2fe5c28d25a79097c48e.sample"
+
+[deps]
+
+source_file="res://imports/music/frog lifeform detected.wav"
+dest_files=["res://.godot/imported/frog lifeform detected.wav-0362102e315c2fe5c28d25a79097c48e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

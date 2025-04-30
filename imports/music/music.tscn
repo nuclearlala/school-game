@@ -7,7 +7,7 @@
 process_mode = 3
 position = Vector2(9, -2)
 stream = ExtResource("1_brbpq")
-volume_db = -20.479
+volume_db = -26.979
 autoplay = true
 max_distance = 999999.0
 script = ExtResource("2_lw02e")

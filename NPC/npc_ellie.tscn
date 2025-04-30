@@ -1,0 +1,155 @@
+[gd_scene load_steps=22 format=3 uid="uid://bqhxtqya6uv6n"]
+
+[ext_resource type="Texture2D" uid="uid://b4nwmsjxujqpj" path="res://NPC/ellie_idle_final.png" id="1_3x01s"]
+[ext_resource type="Script" uid="uid://5nrpesouk1n4" path="res://NPC/npc_ellie.gd" id="1_nikp3"]
+[ext_resource type="Texture2D" uid="uid://ccctqobtgm06h" path="res://NPC/ellie_idle_blink.png" id="2_nikp3"]
+[ext_resource type="Texture2D" uid="uid://smxuwhi6tji2" path="res://imports/Sprites/Objects/shadow.png" id="4_n65e6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n65e6"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(0, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a10gr"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(120, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu4so"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(240, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_888qi"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(360, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7f06"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(480, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyjr5"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(600, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y36ee"]
+atlas = ExtResource("1_3x01s")
+region = Rect2(720, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii1wt"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(0, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqo6g"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(120, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1o83"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(240, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c77l"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(360, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pl8i"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(480, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cqq8"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(600, 0, 120, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1hcw"]
+atlas = ExtResource("2_nikp3")
+region = Rect2(720, 0, 120, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iu35k"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_n65e6")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_a10gr")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_yu4so")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_888qi")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_b7f06")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_vyjr5")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_y36ee")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_ii1wt")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_yqo6g")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_j1o83")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_5c77l")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_1pl8i")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_5cqq8")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_p1hcw")
+}],
+"loop": true,
+"name": &"Ellie_Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hkbqc"]
+radius = 45.0999
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nikp3"]
+size = Vector2(137, 128)
+
+[node name="NPC_Ellie" type="CharacterBody2D"]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_nikp3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iu35k")
+animation = &"Ellie_Idle"
+frame_progress = 0.375786
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_hkbqc")
+
+[node name="chatDetection" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+visible = false
+position = Vector2(3, -4)
+shape = SubResource("RectangleShape2D_nikp3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.364706)
+light_mask = 63
+visibility_layer = 63
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(2, 53)
+scale = Vector2(2.09016, 1.44118)
+texture = ExtResource("4_n65e6")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]
